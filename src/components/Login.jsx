@@ -1,9 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { GoogleLogin } from "@react-oauth/google";
 import { useNavigate } from "react-router-dom";
-import { useGoogleLogin, googleLogout } from "@react-oauth/google";
 import shareVideo from "../assets/share.mp4";
-import logo from "../assets/logo.png";
 import logowhite from "../assets/logowhite.png";
 
 import { client } from "../client";
@@ -47,7 +45,12 @@ const Login = () => {
                 navigate("/", {replace: true});
             })*/
   };
-
+  useEffect(() => {
+    const user = localStorage.getItem("user");
+    if (user) {
+      navigate("/home");
+    }
+  }, [navigate]);
   return (
     <div className="flex justify-start items-center flex-col h-screen">
       <div className="relative w-full h-full">

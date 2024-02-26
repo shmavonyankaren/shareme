@@ -5,11 +5,9 @@
 body {
   font-family: "Lato", sans-serif;
 }
-
 ::-webkit-scrollbar {
   display: none;
 }
-
-.hide-scrollbar::-webkit-scrollbar {
+::-webkit-scrollbar-thumb {
   display: none;
 }
